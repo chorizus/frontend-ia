@@ -1,0 +1,46 @@
+<div class="notification-panel" [class.open]="isOpen" [style.top]="panelPosition.top" [style.right]="panelPosition.right" *ngIf="isOpen">
+    <div class="panel-content">
+        <!-- Header del panel -->
+        <div class="panel-header">
+            <h3 class="panel-title">Notificaciones</h3>
+            <div class="header-actions">
+                <button class="clear-all-btn" (click)="onClearAll()" *ngIf="notifications.length > 0">
+              Limpiar todo
+            </button>
+                <button class="close-btn" (click)="onClose()">
+              <span class="close-icon">×</span>
+            </button>
+            </div>
+        </div>
+
+        <!-- Lista de notificaciones -->
+        <div class="notifications-list">
+            <div *ngIf="notifications.length === 0" class="empty-state">
+                <div class="empty-icon">🔔</div>
+                <p class="empty-message">No tienes notificaciones</p>
+            </div>
+
+            <div *ngFor="let notification of notifications" class="notification-item" [class.unread]="!notification.read" [class.read]="notification.read" (click)="onNotificationClick(notification)">
+
+                <div class="notification-icon" [class]="'icon-' + notification.type">
+                    {{ getNotificationIcon(notification.type) }}
+                </div>
+
+                <div class="notification-content">
+                    <div class="notification-title">{{ notification.title }}</div>
+                    <div class="notification-message">{{ notification.message }}</div>
+                    <div class="notification-time">{{ getTimeAgo(notification.timestamp) }}</div>
+                </div>
+
+                <div class="notification-status" *ngIf="!notification.read">
+                    <div class="unread-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer del panel -->
+        <div class="panel-footer" *ngIf="notifications.length > 0">
+            <button class="view-all-btn">Ver todas</button>
+        </div>
+    </div>
+</div>

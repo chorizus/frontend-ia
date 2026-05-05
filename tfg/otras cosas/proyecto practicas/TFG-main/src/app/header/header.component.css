@@ -1,0 +1,103 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    padding: 20px 0;
+    background-color: rgba(255, 255, 255);
+    background-image: url("../dashboard/Fondo.png");
+    background-size: 200%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: visible;
+    margin-top: -12px;
+}
+
+.header-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-right: 6px;
+}
+
+.notification-container {
+    position: relative;
+    z-index: 10001;
+}
+
+.notification-button {
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: white;
+    background-image: url('./notification3.svg');
+    background-size: 28px 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.notification-button:hover {
+    transform: scale(1.15);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #ef4444;
+    color: white;
+    font-family: Urbanist, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.user-avatar-button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.user-avatar-button:hover {
+    transform: scale(1.15);
+}
+
+.avatar-image {
+    width: 24px;
+    height: 24px;
+}

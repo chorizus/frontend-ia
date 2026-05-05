@@ -1,0 +1,30 @@
+<main class="dashboard">
+    <div class="navigation-fixed">
+        <app-navigation></app-navigation>
+    </div>
+
+    <section class="dashboard-content">
+        <app-header title="Dashboard"></app-header>
+
+        <app-filter-bar></app-filter-bar>
+
+        <div class="grid-container">
+            <div class="stats-grid">
+                <app-stat-card title="Total Reseñas" [rating]="statsData.totalReviews.rating" [count]="statsData.totalReviews.count" [distribution]="statsData.totalReviews.distribution"></app-stat-card>
+
+                <app-stat-card title="Reseñas Respondidas" [count]="statsData.respondedReviews.count" [percentage]="statsData.respondedReviews.percentage" [trend]="statsData.respondedReviews.trend" [totalReviews]="statsData.totalReviews.count" type="percentage"></app-stat-card>
+
+                <app-stat-card title="Visitas" [count]="statsData.visits.count" [trend]="statsData.visits.trend" type="visits"></app-stat-card>
+
+                <app-stat-card title="Acciones" [count]="statsData.actions.count" [trend]="statsData.actions.trend" type="actions"></app-stat-card>
+            </div>
+
+            <div class="charts-grid">
+                <app-reputation-chart></app-reputation-chart>
+                <app-keyword-cloud></app-keyword-cloud>
+            </div>
+        </div>
+
+        <app-reputation-map></app-reputation-map>
+    </section>
+</main>

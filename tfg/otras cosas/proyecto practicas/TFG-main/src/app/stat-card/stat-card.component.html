@@ -1,0 +1,53 @@
+<article class="stat-card">
+    <h2 class="card-title">{{ title }}</h2>
+
+    <div class="card-content" [ngSwitch]="type">
+        <!-- Reviews Card -->
+        <div *ngSwitchCase="'reviews'" class="reviews-content">
+            <div class="rating-section">
+                <div class="rating">
+                    <span class="rating-value">{{ rating }}</span>
+                    <span class="rating-max">/5.0</span>
+                </div>
+                <p class="review-count">{{ formatNumber(count) }} reseñas</p>
+            </div>
+
+            <div class="distribution" style="height: 200px; min-width: 0;">
+                <canvas baseChart [data]="distributionChartData" [options]="distributionChartOptions" [type]="'bar'">
+                </canvas>
+            </div>
+        </div>
+
+        <!-- Percentage Card -->
+        <div *ngSwitchCase="'percentage'" class="percentage-content">
+            <div class="percentage-section">
+                <span class="percentage-value">{{ percentage }}%</span>
+                <span class="trend">{{ trend }} vs el mes anterior</span>
+            </div>
+            <div class="percentage-chart">
+                <canvas baseChart [data]="percentageChartData" [options]="percentageChartOptions" [type]="'doughnut'">
+                </canvas>
+            </div>
+        </div>
+
+        <!-- Visits Card -->
+        <div *ngSwitchCase="'visits'" class="visits-content">
+            <span class="visits-value">{{ formatNumber(count) }}</span>
+            <span class="trend">{{ trend }} vs el mes anterior</span>
+            <div class="visits-chart">
+                <canvas baseChart [data]="visitsChartData" [options]="visitsChartOptions" [type]="'bar'">
+                </canvas>
+            </div>
+        </div>
+
+        <!-- Actions Card -->
+        <div *ngSwitchCase="'actions'" class="actions-content">
+            <span class="actions-value">{{ formatNumber(count) }}</span>
+            <span class="trend">{{ trend }} vs el mes anterior</span>
+            <div class="actions-chart">
+                <canvas baseChart [data]="actionsChartData" [options]="actionsChartOptions" [type]="'line'">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</article>

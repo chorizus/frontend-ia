@@ -1,0 +1,207 @@
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 32px;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    flex: 1;
+}
+
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    border: 1px solid #666;
+    border-radius: 20px;
+    background: transparent;
+    font-family: Urbanist, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.filter-button:hover {
+    background-color: rgba(127, 86, 217, 0.1);
+    border-color: #7f56d9;
+}
+
+.expand-icon {
+    width: 12px;
+    height: 8px;
+    transition: transform 0.2s ease;
+}
+
+.expand-icon.rotated {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    animation: dropdownFadeIn 0.2s ease-out;
+}
+
+.dropdown-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-family: Urbanist, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(127, 86, 217, 0.1);
+}
+
+.dropdown-item.selected {
+    background-color: #7f56d9;
+    color: white;
+}
+
+.dropdown-item.selected:hover {
+    background-color: #6b47c7;
+}
+
+.dropdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    background: transparent;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.location-input {
+    flex: 1;
+    max-width: 240px;
+    padding: 12px 16px;
+    border: 1px solid #666;
+    border-radius: 20px;
+    background: transparent;
+    font-family: Urbanist, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #999;
+}
+
+.more-filters-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #181d27;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.more-filters-icon {
+    width: 22px;
+    height: 22px;
+}
+
+@media (max-width: 991px) {
+    .filter-bar {
+        padding: 24px;
+    }
+}
+
+.location-search-dropdown {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    width: 100%;
+    max-width: 240px;
+}
+
+.location-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    margin-top: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    animation: dropdownFadeIn 0.2s ease-out;
+}
+
+.location-dropdown-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-family: Urbanist, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.location-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.location-dropdown-item:hover {
+    background-color: rgba(127, 86, 217, 0.1);
+}
+
+.clear-location-btn {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    padding: 0 4px;
+    line-height: 1;
+}

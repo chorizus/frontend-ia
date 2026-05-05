@@ -1,0 +1,177 @@
+.stat-card {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 18px;
+    padding: 12px 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.card-title {
+    color: #181d27;
+    font-family: Urbanist, -apple-system, Roboto, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+/* Reviews Card Styles */
+
+.reviews-content {
+    display: flex;
+    gap: 5%;
+    flex: 1;
+}
+
+.rating-section {
+    width: 120px;
+    /* padding: 10px; */
+}
+
+.rating {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.rating-value {
+    font-size: 48px;
+    font-weight: 500;
+    color: #181d27;
+}
+
+.rating-max {
+    font-size: 22px;
+    color: #535862;
+}
+
+.review-count {
+    font-size: 18px;
+    color: #535862;
+    margin-top: 8px;
+    /* font-weight: 500; */
+}
+
+.distribution {
+    flex: 1;
+}
+
+.distribution-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.distribution-label {
+    color: #535862;
+    font-size: 14px;
+    width: 10px;
+}
+
+.distribution-bar-bg {
+    flex: 1;
+    height: 6px;
+    background-color: #e7e7e7;
+    border-radius: 3px;
+}
+
+.distribution-bar {
+    height: 100%;
+    background-color: #7f56d9;
+    border-radius: 3px;
+}
+
+
+/* Percentage Card Styles */
+
+.percentage-content {
+    display: flex;
+    gap: 10%;
+    flex: 1;
+}
+
+.percentage-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+}
+
+.percentage-value {
+    font-size: 48px;
+    color: #181d27;
+    font-weight: 500;
+}
+
+.percentage-chart {
+    width: 130px;
+    height: 200px;
+    position: relative;
+}
+
+
+/* Visits Card Styles */
+
+.visits-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.visits-value {
+    font-size: 48px;
+    color: #181d27;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.trend {
+    font-size: 18px;
+    color: #535862;
+    margin-top: 8px;
+}
+
+.visits-chart {
+    height: 95px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.chart-bar {
+    flex: 1;
+    background-color: #7f56d9;
+    border-radius: 4px 4px 0 0;
+    height: 100%;
+}
+
+
+/* Actions Card Styles */
+
+.actions-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.actions-value {
+    font-size: 48px;
+    color: #181d27;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.actions-chart {
+    height: 90px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+    .stat-card {
+        padding: 24px;
+    }
+}

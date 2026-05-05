@@ -1,0 +1,23 @@
+<header class="header">
+    <h1 class="header-title">{{ title }}</h1>
+    <div class="user-actions">
+        <div class="notification-container">
+            <button #notificationButton *ngIf="showNotifications" class="notification-button" type="button" (click)="toggleNotificationPanel()">
+                <!-- Badge de notificaciones sin leer -->
+                <div *ngIf="unreadNotificationsCount > 0" class="notification-badge">
+                    {{ unreadNotificationsCount > 9 ? '9+' : unreadNotificationsCount }}
+                </div>
+            </button>
+
+            <!-- Panel de notificaciones -->
+            <app-notification-panel [isOpen]="isNotificationPanelOpen" [panelPosition]="panelPosition" (closePanel)="onNotificationPanelClose()" (notificationRead)="onNotificationRead($event)" (clearAll)="onClearAllNotifications()">
+            </app-notification-panel>
+        </div>
+
+        <button *ngIf="showUserAvatar" class="user-avatar-button" type="button">
+            <img src="https://cdn.builder.io/api/v1/image/assets/be32a78ac3ad4c2b893f916c2625ad63/43b85f3fc557cccaa4a35263d7aa28717957acd3?placeholderIfAbsent=true"
+                 alt="Usuario"
+                 class="avatar-image" />
+        </button>
+    </div>
+</header>
