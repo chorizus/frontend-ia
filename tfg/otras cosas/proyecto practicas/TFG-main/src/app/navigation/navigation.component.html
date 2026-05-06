@@ -1,9 +1,0 @@
-<nav class="navigation">
-    <img [src]="'https://cdn.builder.io/api/v1/image/assets%2Fbe32a78ac3ad4c2b893f916c2625ad63%2F29bf08f26cf6454a84e7ef420a89c6dc'" alt="Logo" class="nav-logo" />
-
-    <div class="nav-items">
-        <button *ngFor="let item of navItems" [class]="'nav-item ' + (item.active ? 'active' : '')">
-      <img [src]="item.icon" alt="Navigation icon" class="nav-icon" />
-    </button>
-    </div>
-</nav>
