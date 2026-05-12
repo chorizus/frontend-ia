@@ -1,7 +1,7 @@
 :root {
-  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-family-base: system-ui, -apple-system, "Segoe UI", sans-serif;
   --color-bg: #f6f8fc;
-  --color-surface: #ffffff;
+  --color-surface: #fff;
   --color-surface-muted: #eef2ff;
   --color-text: #101828;
   --color-text-muted: #475467;
@@ -10,8 +10,8 @@
   --color-border: #d0d5dd;
   --color-success: #067647;
   --color-error: #b42318;
-  --shadow-sm: 0 4px 16px rgba(16, 24, 40, 0.06);
-  --shadow-md: 0 14px 32px rgba(16, 24, 40, 0.1);
+  --shadow-sm: 0 4px 16px rgb(16 24 40 / 6%);
+  --shadow-md: 0 14px 32px rgb(16 24 40 / 10%);
   --radius-md: 12px;
   --radius-lg: 20px;
 }
@@ -87,9 +87,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(246, 248, 252, 0.9);
+  background: rgb(246 248 252 / 90%);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(16, 24, 40, 0.08);
+  border-bottom: 1px solid rgb(16 24 40 / 8%);
 }
 
 .header-content {
@@ -104,6 +104,69 @@ a {
   font-size: 1.25rem;
   font-weight: 800;
   text-decoration: none;
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.menu-toggle-icon,
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentcolor;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.menu-toggle-icon {
+  position: relative;
+}
+
+.menu-toggle-icon::before,
+.menu-toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle-icon::before {
+  top: -0.36rem;
+}
+
+.menu-toggle-icon::after {
+  top: 0.36rem;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon {
+  transform: rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::before {
+  transform: translateY(0.36rem) rotate(-90deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle-icon::after {
+  opacity: 0;
 }
 
 .nav-list,
@@ -195,7 +258,7 @@ a {
 }
 
 .button-primary:focus-visible {
-  outline: 3px solid rgba(51, 70, 211, 0.35);
+  outline: 3px solid rgb(51 70 211 / 35%);
   outline-offset: 2px;
 }
 
@@ -212,7 +275,7 @@ a {
 
 .card {
   background: var(--color-surface);
-  border: 1px solid rgba(16, 24, 40, 0.08);
+  border: 1px solid rgb(16 24 40 / 8%);
   border-radius: var(--radius-md);
   padding: 1.5rem;
   box-shadow: var(--shadow-sm);
@@ -275,7 +338,7 @@ a {
 .form-field textarea:focus-visible {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(51, 70, 211, 0.2);
+  box-shadow: 0 0 0 3px rgb(51 70 211 / 20%);
 }
 
 .form-field.is-invalid input,
@@ -310,7 +373,7 @@ a {
 }
 
 .site-footer {
-  border-top: 1px solid rgba(16, 24, 40, 0.08);
+  border-top: 1px solid rgb(16 24 40 / 8%);
   background: var(--color-surface);
 }
 
@@ -323,12 +386,12 @@ a {
   flex-wrap: wrap;
 }
 
-.footer-content p {
+.site-footer .footer-content p {
   margin: 0;
   color: var(--color-text-muted);
 }
 
-@media (min-width: 48rem) {
+@media (width >= 48rem) {
   .section {
     padding: 5.5rem 0;
   }
@@ -338,12 +401,54 @@ a {
   }
 }
 
-@media (min-width: 64rem) {
+@media (width >= 64rem) {
   .feature-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .hero {
     padding-top: 6.5rem;
+  }
+}
+
+@media (width < 48rem) {
+  .header-content {
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: auto;
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .main-nav.is-open {
+    display: block;
+  }
+
+  .nav-list {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .nav-list a {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media (width >= 48rem) {
+  .main-nav {
+    display: block;
   }
 }

@@ -1,6 +1,8 @@
 const form = document.querySelector("#contact-form");
 const submitButton = form?.querySelector('button[type="submit"]');
 const feedbackNode = document.querySelector("#form-feedback");
+const menuToggle = document.querySelector(".menu-toggle");
+const mainNav = document.querySelector("#main-nav");
 
 const fields = {
   name: document.querySelector("#name"),
@@ -121,7 +123,7 @@ function handleSubmit(event) {
   setFormFeedback("Enviando mensaje...", "");
 
   // Simula una llamada a backend manteniendo feedback accesible para el usuario.
-  window.setTimeout(() => {
+  globalThis.setTimeout(() => {
     form?.reset();
     clearFormFieldStates();
     setFormFeedback("Mensaje enviado correctamente. Te responderemos en menos de 24 horas.", "success");
@@ -130,7 +132,44 @@ function handleSubmit(event) {
   }, 900);
 }
 
+function closeMobileMenu() {
+  if (!menuToggle || !mainNav) return;
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Abrir menu de navegacion");
+  mainNav.classList.remove("is-open");
+}
+
+function registerMobileMenu() {
+  if (!menuToggle || !mainNav) return;
+
+  menuToggle.addEventListener("click", () => {
+    const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+    const nextExpanded = !isExpanded;
+
+    menuToggle.setAttribute("aria-expanded", String(nextExpanded));
+    menuToggle.setAttribute(
+      "aria-label",
+      nextExpanded ? "Cerrar menu de navegacion" : "Abrir menu de navegacion",
+    );
+    mainNav.classList.toggle("is-open", nextExpanded);
+  });
+
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  });
+
+  globalThis.addEventListener("resize", () => {
+    if (globalThis.innerWidth >= 768) {
+      closeMobileMenu();
+    }
+  });
+}
+
 if (form) {
   registerFieldValidation();
   form.addEventListener("submit", handleSubmit);
 }
+
+registerMobileMenu();
