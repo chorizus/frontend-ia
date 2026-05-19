@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flowdeck — Productividad y colaboración para equipos remotos</title>
+    <meta
+      name="description"
+      content="Flowdeck reúne tableros, tareas y conversaciones en un solo lugar para que tu equipo remoto avance con foco y claridad."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600&family=Urbanist:wght@600;700;800&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Skip link para usuarios de teclado y lectores de pantalla -->
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a class="brand" href="#top" aria-label="Flowdeck, ir al inicio">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <path
+                fill="currentColor"
+                d="M4 5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5Zm10 1v4h4"
+              />
+            </svg>
+          </span>
+          <span class="brand__name">Flowdeck</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navegación principal">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="primary-nav"
+          >
+            <span class="visually-hidden">Abrir menú</span>
+            <span class="nav-toggle__bars" aria-hidden="true"></span>
+          </button>
+          <ul id="primary-nav" class="site-nav__list">
+            <li><a href="#features">Funcionalidades</a></li>
+            <li><a href="#about">Sobre nosotros</a></li>
+            <li><a href="#contact">Contacto</a></li>
+            <li>
+              <a class="btn btn--primary btn--sm" href="#contact">Empezar gratis</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <div class="hero__copy">
+            <span class="eyebrow">Nuevo · Tableros 2.0 disponibles</span>
+            <h1 id="hero-title" class="hero__title">
+              Tu equipo remoto, <span class="text-accent">alineado y en flujo</span>.
+            </h1>
+            <p class="hero__subtitle">
+              Flowdeck combina tableros, tareas, mensajería en hilos y objetivos en un
+              único espacio para que dejes de saltar entre herramientas y empieces a
+              entregar.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#contact">Empezar gratis</a>
+              <a class="btn btn--ghost" href="#features">Ver cómo funciona</a>
+            </div>
+            <p class="hero__meta">
+              Sin tarjeta de crédito · 14 días de plan Pro · Cancelas cuando quieras
+            </p>
+          </div>
+
+          <!-- Mockup decorativo en SVG inline -->
+          <div class="hero__visual" aria-hidden="true">
+            <div class="mockup">
+              <div class="mockup__bar">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="mockup__body">
+                <div class="mockup__col">
+                  <p class="mockup__col-title">Hoy</p>
+                  <div class="mockup__card mockup__card--accent">Revisar propuesta Q3</div>
+                  <div class="mockup__card">Sync diseño · 11:00</div>
+                  <div class="mockup__card">Responder a Marta</div>
+                </div>
+                <div class="mockup__col">
+                  <p class="mockup__col-title">En curso</p>
+                  <div class="mockup__card">Onboarding cliente Norte</div>
+                  <div class="mockup__card mockup__card--muted">Auditoría SEO</div>
+                </div>
+                <div class="mockup__col">
+                  <p class="mockup__col-title">Hecho</p>
+                  <div class="mockup__card mockup__card--done">Release v2.3 ✓</div>
+                  <div class="mockup__card mockup__card--done">Retro de sprint ✓</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <header class="section__head">
+            <span class="eyebrow">Funcionalidades</span>
+            <h2 id="features-title" class="section__title">
+              Todo lo que tu equipo necesita, sin las pestañas de más
+            </h2>
+            <p class="section__lead">
+              Diseñado para equipos de 5 a 500 personas que trabajan a distintos husos
+              horarios y necesitan claridad sin reuniones extra.
+            </p>
+          </header>
+
+          <ul class="feature-grid" role="list">
+            <li class="feature-card">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path
+                    fill="currentColor"
+                    d="M3 5a2 2 0 0 1 2-2h4v18H5a2 2 0 0 1-2-2V5Zm8-2h4v10h-4V3Zm6 0h4a2 2 0 0 1 2 2v6h-6V3Z"
+                  />
+                </svg>
+              </span>
+              <h3 class="feature-card__title">Tableros visuales</h3>
+              <p class="feature-card__text">
+                Organiza el trabajo en columnas tipo Kanban, listas o cronograma. Arrastra,
+                filtra y agrupa por persona, etiqueta o prioridad.
+              </p>
+            </li>
+
+            <li class="feature-card">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path
+                    fill="currentColor"
+                    d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2Z"
+                  />
+                </svg>
+              </span>
+              <h3 class="feature-card__title">Mensajería en hilos</h3>
+              <p class="feature-card__text">
+                Conversa al lado de la tarea, no en un canal aparte. Cada decisión queda
+                ligada al trabajo que la motivó.
+              </p>
+            </li>
+
+            <li class="feature-card">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path
+                    fill="currentColor"
+                    d="M3 21V10h4v11H3Zm7 0V3h4v18h-4Zm7 0v-7h4v7h-4Z"
+                  />
+                </svg>
+              </span>
+              <h3 class="feature-card__title">Objetivos y métricas</h3>
+              <p class="feature-card__text">
+                Conecta cada tarea con un objetivo trimestral y mide avances en tiempo real
+                con dashboards listos para presentar.
+              </p>
+            </li>
+
+            <li class="feature-card">
+              <span class="feature-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path
+                    fill="currentColor"
+                    d="M10 4a4 4 0 0 1 4 4v2h2a4 4 0 1 1 0 8h-2v-2H8v2H6a4 4 0 1 1 0-8h2V8a4 4 0 0 1 2-4Z"
+                  />
+                </svg>
+              </span>
+              <h3 class="feature-card__title">Integraciones nativas</h3>
+              <p class="feature-card__text">
+                Conecta GitHub, Figma, Google Drive y Slack en un par de clics. Sincroniza
+                eventos sin scripts ni Zapier.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section section--alt" id="about" aria-labelledby="about-title">
+        <div class="container about">
+          <div class="about__copy">
+            <span class="eyebrow">Sobre nosotros</span>
+            <h2 id="about-title" class="section__title">
+              Construimos la herramienta que siempre quisimos usar
+            </h2>
+            <p>
+              Flowdeck nació en 2022 cuando un grupo de personas que trabajábamos en
+              equipos distribuidos nos cansamos de duplicar información entre cinco apps
+              distintas. Hoy somos un equipo de 28 personas en 9 países, con la misión de
+              hacer que la colaboración remota sea más clara, más calmada y más humana.
+            </p>
+            <p>
+              Creemos en el trabajo profundo, en las reuniones cortas y en que el software
+              debería desaparecer para dejarte hacer lo que importa.
+            </p>
+          </div>
+
+          <dl class="stats" aria-label="Cifras de Flowdeck">
+            <div class="stat">
+              <dt class="stat__label">Equipos activos</dt>
+              <dd class="stat__value">12.400+</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat__label">Países</dt>
+              <dd class="stat__value">63</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat__label">Uptime últimos 12 meses</dt>
+              <dd class="stat__value">99,98%</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="container contact">
+          <header class="section__head section__head--left">
+            <span class="eyebrow">Contacto</span>
+            <h2 id="contact-title" class="section__title">¿Hablamos?</h2>
+            <p class="section__lead">
+              Cuéntanos sobre tu equipo y te respondemos en menos de 24 horas hábiles.
+            </p>
+          </header>
+
+          <form
+            class="form"
+            id="contact-form"
+            novalidate
+            aria-describedby="form-status"
+          >
+            <div class="field">
+              <label class="field__label" for="name">Nombre</label>
+              <input
+                class="field__input"
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                minlength="2"
+                maxlength="80"
+                aria-describedby="name-error"
+              />
+              <p class="field__error" id="name-error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="email">Email</label>
+              <input
+                class="field__input"
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+                maxlength="120"
+                aria-describedby="email-error"
+              />
+              <p class="field__error" id="email-error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="message">Mensaje</label>
+              <textarea
+                class="field__input field__input--area"
+                id="message"
+                name="message"
+                rows="5"
+                required
+                minlength="10"
+                maxlength="1000"
+                aria-describedby="message-hint message-error"
+              ></textarea>
+              <p class="field__hint" id="message-hint">
+                Entre 10 y 1000 caracteres.
+              </p>
+              <p class="field__error" id="message-error" role="alert"></p>
+            </div>
+
+            <button class="btn btn--primary btn--block" type="submit">
+              Enviar mensaje
+            </button>
+
+            <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <div class="container site-footer__inner">
+        <div class="site-footer__brand">
+          <span class="brand">
+            <span class="brand__mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22">
+                <path
+                  fill="currentColor"
+                  d="M4 5a2 2 0 0 1 2-2h8l6 6v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5Zm10 1v4h4"
+                />
+              </svg>
+            </span>
+            <span class="brand__name">Flowdeck</span>
+          </span>
+          <p class="site-footer__tagline">
+            Productividad y colaboración para equipos remotos.
+          </p>
+        </div>
+
+        <nav class="site-footer__nav" aria-label="Enlaces del pie">
+          <div>
+            <h2 class="site-footer__heading">Producto</h2>
+            <ul>
+              <li><a href="#features">Funcionalidades</a></li>
+              <li><a href="#about">Sobre nosotros</a></li>
+              <li><a href="#contact">Contacto</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="site-footer__heading">Compañía</h2>
+            <ul>
+              <li><a href="#about">Equipo</a></li>
+              <li><a href="#contact">Trabaja con nosotros</a></li>
+              <li><a href="#contact">Prensa</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="site-footer__heading">Legal</h2>
+            <ul>
+              <li><a href="#">Términos</a></li>
+              <li><a href="#">Privacidad</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="container site-footer__bottom">
+        <p>© <span id="year"></span> Flowdeck S.L. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

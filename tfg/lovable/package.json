@@ -1,0 +1,16 @@
+{
+  "name": "lovable",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "stylelint": "^17.11.1",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}
