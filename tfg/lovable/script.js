@@ -39,7 +39,9 @@
   if (!form) return;
 
   // Reglas de validación declarativas (DRY)
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Regex estricta: usuario + dominio con etiquetas válidas + TLD ≥2 letras.
+  const EMAIL_RE =
+    /^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)+[A-Za-z]{2,}$/;
 
   const rules = {
     name: [
@@ -135,7 +137,7 @@
       form.querySelectorAll(".field").forEach((f) =>
         f.classList.remove("is-success", "is-error")
       );
-    } catch (err) {
+    } catch {
       statusEl.classList.add("is-error");
       statusEl.textContent = "Hubo un problema al enviar. Inténtalo de nuevo.";
     } finally {

@@ -8,19 +8,26 @@
       name="description"
       content="Flowdeck reúne tableros, tareas y conversaciones en un solo lugar para que tu equipo remoto avance con foco y claridad."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Fuentes servidas localmente (ver styles.css @font-face) para evitar
+         FOUT, dependencia de CDN y problemas de SRI con Google Fonts. -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600&family=Urbanist:wght@600;700;800&display=swap"
+      rel="preload"
+      href="./fonts/urbanist-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./fonts/epilogue-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- Skip link para usuarios de teclado y lectores de pantalla -->
-    <a class="skip-link" href="#main">Saltar al contenido</a>
-
-    <header class="site-header" role="banner">
+    <header class="site-header">
       <div class="container site-header__inner">
         <a class="brand" href="#top" aria-label="Flowdeck, ir al inicio">
           <span class="brand__mark" aria-hidden="true">
@@ -122,7 +129,7 @@
             </p>
           </header>
 
-          <ul class="feature-grid" role="list">
+          <ul class="feature-grid">
             <li class="feature-card">
               <span class="feature-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24">
@@ -297,13 +304,13 @@
               Enviar mensaje
             </button>
 
-            <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+            <output class="form__status" id="form-status" aria-live="polite"></output>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer">
       <div class="container site-footer__inner">
         <div class="site-footer__brand">
           <span class="brand">
