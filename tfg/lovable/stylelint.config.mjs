@@ -1,4 +1,10 @@
-/** @type {import('stylelint').Config} */
+// stylelint.config.mjs
 export default {
-    extends: ['stylelint-config-standard']
+    extends: ['stylelint-config-standard'],
+    rules: {
+        'selector-class-pattern': [
+            '^[a-z][a-z0-9]*(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$',
+            { message: 'Expected BEM class selector pattern' }
+        ],
+    },
 };
